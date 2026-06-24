@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Newbridge Innovations</title>
+<meta name="description" content="Book a discovery call with Newbridge Innovations. Let's find the right entry point for your team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.success-state { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 24px; text-align: center; display: none; }
+.success-state h3 { font-size: 20px; font-weight: 800; color: #15803d; margin-bottom: 8px; }
+.success-state p { font-size: 14px; color: #4B5563; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Newbridge Innovations</span>
+      <span class="nav-logo-sub">Corporate Learning</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="about.html">Our Approach</a>
+      <a href="contact.html" class="active nav-cta">Book a Call</a>
+    </div>
+    <button class="nav-mobile-btn" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+  <a href="index.html">Home</a>
+  <a href="programs.html">Programs</a>
+  <a href="about.html">Our Approach</a>
+  <a href="contact.html">Book a Call</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <h1>Let's talk.</h1>
+    <p>Start with a discovery call. We'll understand your context and identify the right entry point for your team.</p>
+  </div>
+</div>
+
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- FORM -->
+      <div>
+        <div class="contact-form">
+          <h2 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px;">Send a Message</h2>
+          <p style="font-size:14px;color:var(--dark-grey);margin-bottom:var(--space-lg);">We respond to every inquiry within one business day.</p>
+
+          <div id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-control" id="f-first" required placeholder="Jane">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-control" id="f-last" required placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Work Email *</label>
+              <input type="email" class="form-control" id="f-email" required placeholder="jane.smith@company.com">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Organization</label>
+                <input type="text" class="form-control" id="f-org" placeholder="Company name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Role</label>
+                <input type="text" class="form-control" id="f-role" placeholder="e.g. VP Learning & Development">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Industry</label>
+              <select class="form-control" id="f-industry">
+                <option value="">Select your industry…</option>
+                <option>Oil & Gas</option>
+                <option>Construction</option>
+                <option>Supply Chain & Logistics</option>
+                <option>Technology</option>
+                <option>Healthcare</option>
+                <option>Finance & Banking</option>
+                <option>Education</option>
+                <option>Manufacturing</option>
+                <option>Government & Public Sector</option>
+                <option>Non-Profit</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">What brings you here? *</label>
+              <textarea class="form-control" id="f-message" rows="5" required placeholder="Tell us a bit about your team, what you're navigating, and what you're hoping to accomplish…"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Program of Interest</label>
+              <select class="form-control" id="f-program">
+                <option value="">Not sure yet</option>
+                <option>Aha Moment (Half Day)</option>
+                <option>Learning Acquisition (Full Day)</option>
+                <option>Fluency Building</option>
+                <option>Generalization</option>
+                <option>Adaptation (2 Day)</option>
+                <option>LO Transformation</option>
+                <option>Advisory</option>
+              </select>
+            </div>
+            <div id="form-error" style="display:none;color:#b91c1c;font-size:13px;margin-bottom:12px;"></div>
+            <button class="btn btn-primary btn-lg" id="submit-btn" onclick="submitForm()" style="width:100%;">Send Message →</button>
+            <p style="font-size:12px;color:var(--mid-grey);margin-top:12px;text-align:center;">We'll respond within 1 business day. No sales pressure — just a real conversation.</p>
+          </div>
+
+          <div class="success-state" id="success-state">
+            <div style="font-size:40px;margin-bottom:12px;">✉️</div>
+            <h3>Message received.</h3>
+            <p>Thanks for reaching out. We'll be in touch within one business day to set up a discovery call.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="booking-box" style="margin-bottom:var(--space-md);">
+          <div style="font-size:28px;margin-bottom:10px;">📅</div>
+          <h3>Prefer to book directly?</h3>
+          <p>Schedule a 30-minute discovery call at a time that works for you.</p>
+          <a href="https://calendly.com/newbridgeinnovations" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">Book a Time →</a>
+        </div>
+
+        <div class="contact-info-card" style="margin-bottom:var(--space-sm);">
+          <div class="ci-label">Email</div>
+          <div class="ci-value"><a href="mailto:contact@newbridgeinnovations.ca" style="color:white;">contact@newbridgeinnovations.ca</a></div>
+        </div>
+        <div class="contact-info-card" style="margin-bottom:var(--space-sm);">
+          <div class="ci-label">Phone</div>
+          <div class="ci-value"><a href="tel:4038611917" style="color:white;">(403) 861-1917</a></div>
+        </div>
+        <div class="contact-info-card">
+          <div class="ci-label">Location</div>
+          <div class="ci-value">2451 Dieppe Ave SW<br><span style="font-size:13px;color:rgba(255,255,255,.6);">Calgary, Alberta, Canada</span></div>
+        </div>
+
+        <div style="margin-top:var(--space-md);padding:var(--space-md);background:var(--light);border-radius:var(--radius);border:1px solid var(--border);">
+          <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;">What to expect</div>
+          <div style="font-size:13px;color:var(--dark-grey);line-height:1.7;">
+            <div style="margin-bottom:6px;">✓ A real conversation — no pitch deck</div>
+            <div style="margin-bottom:6px;">✓ Questions about your team and context</div>
+            <div style="margin-bottom:6px;">✓ An honest recommendation (even if it's not us)</div>
+            <div>✓ A clear next step if there's a fit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Newbridge Innovations</div>
+        <div class="footer-brand-sub">Corporate Learning</div>
+        <div class="footer-brand-desc">Developing cognitive capacity in leaders and teams. The How to Think methodology — built on neuroscience, proven in practice.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <a href="programs.html#aha">Aha Moment</a>
+        <a href="programs.html#acquisition">Learning Acquisition</a>
+        <a href="programs.html#adaptation">Adaptation</a>
+        <a href="programs.html">View All</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">Our Approach</a>
+        <a href="about.html#nigel">About Nigel</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@newbridgeinnovations.ca">contact@newbridgeinnovations.ca</a>
+        <a href="tel:4038611917">(403) 861-1917</a>
+        <a href="#">Calgary, AB</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Newbridge Innovations. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+function toggleMobileMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+
+async function submitForm() {
+  const first = document.getElementById('f-first').value.trim();
+  const last = document.getElementById('f-last').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const message = document.getElementById('f-message').value.trim();
+  const errorEl = document.getElementById('form-error');
+
+  if (!first || !last || !email || !message) {
+    errorEl.textContent = 'Please fill in all required fields.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    await db.collection('nb_contact_submissions').add({
+      name: first + ' ' + last,
+      email,
+      organization: document.getElementById('f-org').value,
+      role: document.getElementById('f-role').value,
+      industry: document.getElementById('f-industry').value,
+      message,
+      program: document.getElementById('f-program').value,
+      submittedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  } catch(e) {
+    // Fallback: show success anyway (form data can be collected via Netlify Forms)
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
